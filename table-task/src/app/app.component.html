@@ -1,0 +1,37 @@
+<!-- <router-outlet></router-outlet> -->
+ <h1 >Countries Table</h1>
+<div class="mat-elevation-z8">
+    <table mat-table   [dataSource]="dataSource" >
+  
+      <!-- country Column -->
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef> Country </th>
+        <td mat-cell *matCellDef="let element"> {{element.name.common}} </td>
+      </ng-container>
+  
+      <!-- capital Column -->
+      <ng-container matColumnDef="capital">
+        <th mat-header-cell *matHeaderCellDef> Capital </th>
+        <td mat-cell *matCellDef="let element"> {{element.capital}} </td>
+      </ng-container>
+
+      
+      <!-- officialName Column -->
+      <ng-container matColumnDef="official">
+        <th mat-header-cell *matHeaderCellDef> Official Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name.official}} </td>
+      </ng-container>
+
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [length]="manageMovieListCount" [pageSize]="count" [pageSizeOptions]="[10,20,manageMovieListCount]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements" (page)="paginate($event)" >
+    </mat-paginator>
+  </div>
+ 
+  

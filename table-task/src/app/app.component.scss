@@ -1,0 +1,16 @@
+table{
+  th,td{
+    border: 1px solid #e0e0e0;
+  }
+    &:nth-child(1){
+      th{
+        background-color: #4f81bd;
+        color: #ffffff;
+      }
+  }
+}
+h1{
+ display: flex;
+ justify-content: center;
+ color: blueviolet;
+}
